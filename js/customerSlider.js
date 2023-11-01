@@ -1,28 +1,41 @@
-const carousel = document.getElementById("carousel");
-const slides = [
-  document.getElementById("slide1"),
-  document.getElementById("slide2"),
-  document.getElementById("slide3"),
-];
-
-let currentIndex = 0;
+const slides = document.querySelectorAll(".slide");
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
+let currentSlide = 0;
 
 function showSlide(index) {
-  if (index < 0) {
-    index = slides.length - 1;
-  } else if (index >= slides.length) {
-    index = 0;
-  }
-
-  const offset = -index * 100;
-  carousel.style.transform = `translateX(${offset}%)`;
-  currentIndex = index;
+  slides.forEach((slide, i) => {
+    if (i === index) {
+      slide.style.display = "block";
+    } else {
+      slide.style.display = "none";
+    }
+  });
 }
 
-// Initialize the carousel
-showSlide(currentIndex);
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
 
-// Auto-advance the carousel (you can customize the interval)
-setInterval(() => {
-  showSlide(currentIndex + 1);
-}, 1000);
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
+
+showSlide(currentSlide);
+
+// Automatic sliding
+let slideInterval = setInterval(nextSlide, 1000); // Change slides every 3 seconds
+
+nextButton.addEventListener("click", () => {
+  clearInterval(slideInterval);
+  nextSlide();
+  slideInterval = setInterval(nextSlide, 1000);
+});
+
+prevButton.addEventListener("click", () => {
+  clearInterval(slideInterval);
+  prevSlide();
+  slideInterval = setInterval(nextSlide, 1000);
+});
