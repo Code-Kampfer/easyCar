@@ -26,6 +26,8 @@ function prevSlide() {
 showSlide(currentSlide);
 
 // Automatic sliding
+// currentSlide.style.transform = "translateX(-120%)";
+// currentSlide.style.transition = "ease-out 200ms";
 let slideInterval = setInterval(nextSlide, 1000); // Change slides every 3 seconds
 
 nextButton.addEventListener("click", () => {
