@@ -7,7 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body>
+  <body class="overflow-hidden">
     <div> <!-- Body wrapper -->
       <div>
         <nav
@@ -65,6 +65,30 @@
           </div>
         </nav>
       </div>
+
+      <div class=" bg-[url('/images/contactimg.png')] "> 
+    
+        <section>
+           <div class="h-screen">
+          <div class="">
+           </div><h1 class="text-white  font-semibold pt-8 text-center text-4xl w-auto"> Contact us</h1>
+             
+            <div class="w-11/12 m-auto">
+              <form onsubmit="" class="flex flex-col gap-10 md:flex md:flex-col md:gap-20">
+              <div class="flex flex-col gap-10 pt-10  md:flex md:flex-row md:justify-between md:gap-8 md:pt-28">
+                <input type="text" id="name" name="name" placeholder="Enter your name" class="placeholder:text-white w-full bg-transparent p-2 border-2 text-white border-white  ">
+                <input type="text" id="email" name="email" placeholder="Enter your email" class="placeholder:text-white w-full bg-transparent p-2 border-2 text-white border-white   ">
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone" class="placeholder:text-white w-full bg-transparent p-2 border-2 text-white border-white  "> 
+              </div>
+                <textarea type="text" id="message" name="message" placeholder="Enter your message" class="placeholder:text-white h-40 w-full p-2 bg-transparent border-2 text-white border-white md:placeholder:text-xl"></textarea>
+                <input type="submit" value="Submit" class="self-start w-1/7 bg-yellow-400 text-white py-2 px-4 rounded-md hover:bg-transparent  border border-yellow-400  md:w-36" >
+    
+          </form>
+          
+    
+          </div>
+    
+
     </div>
   </body>
 </html>
