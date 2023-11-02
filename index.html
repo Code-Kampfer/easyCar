@@ -11,9 +11,11 @@
     .dropdown-content {
       display: none;
       position: absolute;
-      background-color: black;
+      right: 0;
+      background-color: white;
       overflow: auto;
       z-index: 1;
+      width: 50vw;
     }
 
 
@@ -63,16 +65,15 @@
 
 
             <div class="dropdown ">
-              <p  id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">0
+              <p id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">0
               </p>
               <img onclick="myFunction()" class=" dropbtn color-black cursor-pointer w-9  h-9 object-contain sm:block sm:mr-1  " src="images/cart.png" alt="" />
-              <div id="myDropdown" class="dropdown-content  w-full ">
-                <a href="#home" class="  text-white py-5 no-underline block">Car</a>
-                <a href="#about" class="  text-white py-5 no-underline block">Name</a>
-                <a href="#contact" class="  text-white py-5  no-underline block">Price</a>
+              <div id="myDropdown" class="dropdown-content  ">
+                <a href="#home" class="  text-black py-5  no-underline block">Car</a>
+                <a href="#about" class="  text-black py-5 no-underline block">Name</a>
+                <a href="#contact" class="  text-black py-5  no-underline block">Price</a>
               </div>
             </div>
-            </button>
             <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-6">
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
@@ -490,26 +491,8 @@
 
 
 
-    <script>
-      function myFunction() {
-        document.getElementById("myDropdown").classList.toggle("show"); //adding a class show
-      }
-      // Close the dropdown if the user clicks outside of it
-      window.onclick = function(event) {
-        if (!event.target.matches('.dropbtn')) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-              openDropdown.classList.remove('show');
-            }
-          }
-        }
-      }
-    </script>
-    <script src=" js/customerSlider.js">
-    </script>
+    <script src="js/dropDown.js"></script>
+    <script src=" js/customerSlider.js"></script>
     <script src="js/basket.js"></script>
   </div>
 
