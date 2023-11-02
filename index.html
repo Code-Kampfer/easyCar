@@ -6,13 +6,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: black;
+      overflow: auto;
+      z-index: 1;
+    }
+
+
+    .show {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
   <!-- body wrapper -->
   <div class="overflow-hidden">
     <!-- nav div -->
-    <div class="overflow-y-hidden">
+    <div class=" overflow-x-hidden">
       <nav class="bg-black h-20 flex justify-between items-center px-2 md:px-4">
         <div class="block w-1/3 sm:w-1/4 md:w-1/12">
           <a href="#"><img src="images/logo.png" alt="" /></a>
@@ -45,9 +60,19 @@
             <img src="images/search.png" alt="" />
           </div>
           <div class="flex">
-            <img class="w-9 object-contain sm:block sm:mr-1 " src="images/cart.png" alt="" />
-            <p id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">0
-            </p>
+
+
+            <div class="dropdown ">
+              <p  id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">0
+              </p>
+              <img onclick="myFunction()" class=" dropbtn color-black cursor-pointer w-9  h-9 object-contain sm:block sm:mr-1  " src="images/cart.png" alt="" />
+              <div id="myDropdown" class="dropdown-content  w-full ">
+                <a href="#home" class="  text-white py-5 no-underline block">Car</a>
+                <a href="#about" class="  text-white py-5 no-underline block">Name</a>
+                <a href="#contact" class="  text-white py-5  no-underline block">Price</a>
+              </div>
+            </div>
+            </button>
             <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-6">
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
@@ -460,13 +485,34 @@
 
       </div>
     </section>
+
+
+
+
+
+    <script>
+      function myFunction() {
+        document.getElementById("myDropdown").classList.toggle("show"); //adding a class show
+      }
+      // Close the dropdown if the user clicks outside of it
+      window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+              openDropdown.classList.remove('show');
+            }
+          }
+        }
+      }
+    </script>
     <script src=" js/customerSlider.js">
     </script>
+    <script src="js/basket.js"></script>
   </div>
-  <script src="js/basket.js">
 
-
-  </script>
 
 </body>
 
