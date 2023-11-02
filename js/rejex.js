@@ -1,7 +1,7 @@
 function printError(Id, Msg) {
     document.getElementById(Id).innerHTML = Msg;
   }
-  
+  //name//
   function validateName(name) {
     if (name == "" || name == null) {
       printError("nameErr", "Veuillez entrer votre nom.");
@@ -17,7 +17,7 @@ function printError(Id, Msg) {
       }
     }
   }
-
+// email//
   function validateEmail(email) {
     if (email== "" || email == null) {
       printError("emailErr", "Veuillez entrer votre email.");
