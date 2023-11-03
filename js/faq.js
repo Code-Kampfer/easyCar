@@ -20,22 +20,7 @@ window.onclick = function (event) {
 
 
 
-// document.addEventListener("DOMContentLoaded", function () {
-//   const containers = document.querySelectorAll('.container');
-//   containers.forEach(container => {
-//       const icon = container.querySelector('.icon');
-//       const response = container.nextElementSibling;
-
-//       icon.addEventListener('click', function () {
-//           if (response.classList.contains('hidden')) {
-//               response.classList.remove('hidden');
-              
-//           } else {
-//               response.classList.add('hidden');
-//           }
-//       });
-//   });
-// });
+// ----------------------FAQ-------------------------------------
 
 document.addEventListener("DOMContentLoaded", function () {
   const containers = document.querySelectorAll('.container');
