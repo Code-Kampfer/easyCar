@@ -100,7 +100,7 @@ function renderBasket2(popup, car) {
         </div>
         <div class="flex flex-col items-center gap-6 w-full">
           <h3 class="self-center text-xl">Add-Ons</h3>
-          <div class="flex flex-col justify-evenly w-24 gap-4 md:flex-row md:w-auto">
+          <div class="flex flex-col justify-evenly w-24 gap-4 md:flex-row md:justify-evenly md:w-full">
             <div onclick="selected(this)" data-color="white" id="gas"
               class="flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
               <img src="images/gas-tank.svg" alt="">

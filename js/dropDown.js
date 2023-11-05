@@ -12,16 +12,16 @@ function renderBasket(dropdown, basket) {
       const priceParts = car.price.split(" ");
       const price = priceParts[0];
       // Find a parent element that exists when your JavaScript code runs.
-  const parentElement = document.getElementById("cartDropdown");
+      const parentElement = document.getElementById("cartDropdown");
 
-  // Add an event listener to the parent element.
-  parentElement.addEventListener("click", function (event) {
-    // Check if the clicked element has the ID "customizeCarButton".
-    if (event.target.id === "customizeCarButton") {
-      // Handle the event for the "CUSTOMIZE" button.
-      customizeCar(car);
-    }
-  });
+      // Add an event listener to the parent element.
+      parentElement.addEventListener("click", function (event) {
+        // Check if the clicked element has the ID "customizeCarButton".
+        if (event.target.id === "customizeCarButton") {
+          // Handle the event for the "CUSTOMIZE" button.
+          customizeCar(car);
+        }
+      });
 
       return `
       <div class="border-solid border border-black w-[95%] mx-auto mb-2 rounded-xl">
@@ -41,10 +41,8 @@ function renderBasket(dropdown, basket) {
         </div>
       </div>
       `;
-      
     })
     .join("\n");
-  
 }
 
 // Define the customizeCar function
