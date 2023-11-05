@@ -44,7 +44,7 @@ function renderBasket(dropdown, basket) {
         </div>
         <div class="flex flex-col items-end pr-2 ">    
             <div class="font-semibold text-xs bold border border-1 border-solid border-black rounded-full mb-2 w-full max-w-[100px] h-6 flex justify-center bg-yellow-400 float-right">
-              <button id="but1">CUSTOMIZE</button>
+              <button onclick="openPopup()">CUSTOMIZE</button>
             </div>
         </div>
 
