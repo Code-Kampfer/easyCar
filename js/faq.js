@@ -1,24 +1,3 @@
-// Open the popup
-function openPopup() {
-  document.getElementById("popup").classList.remove("hidden");
-}
-
-// Close the popup
-function closePopup() {
-  document.getElementById("popup").classList.add("hidden");
-}
-
-// Close the popup when clicking outside the popup content
-window.onclick = function (event) {
-  var popup = document.getElementById('popup');
-  if (event.target == popup) {
-      popup.classList.add('hidden');
-  }
-}
-
-
-// --------------------------FAQ
-
 document.addEventListener("DOMContentLoaded", function () {
   const containers = document.querySelectorAll('.container');
   containers.forEach(container => {
