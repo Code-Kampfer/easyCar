@@ -23,5 +23,6 @@ rentButtons.forEach((button) => {
       image,
     };
     incrementBasket(details);
+    document.location.reload();
   });
 });

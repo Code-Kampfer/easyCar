@@ -65,13 +65,21 @@
           </div>
           <div class="flex gap-10">
             <div class="dropdown">
-              <p id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">
+              <p id="basket-count" class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-[105px] sm:block sm:right-[100px] md:right-[17px] md:block">
                 0
               </p>
               <img onclick="toggleDropdown()" class="dropbtn color-black cursor-pointer w-9  h-9 object-contain sm:block sm:mr-1  " src="images/cart.png" alt="" />
-              <div id="myDropdown" class="dropdown-content flex flex-col gap-3 border-2 border-black py-1 overflow-y-auto">
-
+              <div>
+              <div id="cartDropdown" class="dropdown-content h-[70vh] border-2 border-black pt-1 overflow-y-auto ">
+                <div id="myDropdown">
+                  
+                </div>
+                <div class="flex justify-around py-2 bg-black">
+                  <button onclick="location.href='checkout.html'" class="font-bold rounded-[15px] p-2 w-28 flex justify-center bg-[#EFE61E]" id="">Checkout</button>
+                  <button onclick="localStorage.clear(); document.location.reload()" class="font-bold rounded-[15px] p-2 w-28 flex justify-center bg-[#EFE61E]" id="">Clear</button>
+                </div>
               </div>
+            </div>
             </div>
             <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-6">
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
@@ -141,7 +149,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -176,7 +184,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -211,7 +219,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -248,7 +256,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -283,7 +291,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -318,7 +326,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -355,7 +363,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -390,7 +398,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
             </div>
@@ -425,7 +433,7 @@
                 </div>
               </div>
               <div
-                class="font-bold border border-1 border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
+                class="font-bold border border-solid border-black rounded-full max-w-sm h-10 flex justify-center bg-yellow-400">
                 <button id="but1">Rent Now</button>
               </div>
 
@@ -442,7 +450,7 @@
       <div class="">
         <!-- List item 1 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex">
             <div class="w-96">
               <img class="carImg" src="images/bmw-series5-black.webp" alt="">
@@ -478,13 +486,13 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
         <!-- List item 2 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/toyota-corolla-black.webp" alt="">
@@ -519,13 +527,13 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
         <!-- List item 3 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/bmw-x5-black.png" alt="">
@@ -560,7 +568,7 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
@@ -568,7 +576,7 @@
       <div>
         <!-- List item 4 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/ford-bronco-black.png" alt="">
@@ -604,13 +612,13 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
         <!-- List item 5 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/tesla-model3-black.png" alt="">
@@ -645,14 +653,14 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
 
         <!-- List item 6 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/bmw-x1-black.png" alt="">
@@ -687,7 +695,7 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
@@ -695,7 +703,7 @@
       <div>
         <!-- List item 7 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/toyota-sienna-black.webp" alt="">
@@ -731,13 +739,13 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
         <!-- List item 8 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-8">
             <div class="w-96">
               <img class="carImg" src="images/ford-explorer-black.png" alt="">
@@ -772,14 +780,14 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
         </div>
 
         <!-- List item 9 -->
         <div
-          class="product flex justify-between bg-white shadow-md border border-1 border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
+          class="product flex justify-between bg-white shadow-md border border-solid border-black p-5 rounded-xl w-11/12 h-64 mr-auto ml-auto mt-10  md:flex-row ">
           <div class="flex gap-32">
             <div class="w-96">
               <img class="carImg" src="images/tesla-x-black.png" alt="">
@@ -814,7 +822,7 @@
             </div>
           </div>
           <div
-            class="font-bold border border-1 border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
+            class="font-bold border border-solid opacity-1 border-black rounded-full w-48 h-12 text-2xl  flex justify-center self-center bg-yellow-400  ">
             <button id="but1">Rent Now</button>
           </div>
 
