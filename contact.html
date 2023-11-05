@@ -1,18 +1,37 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="images/icon.png" />
-  <title>EasyCar - Contact</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" type="image/x-icon" href="images/icon.png" />
+  <link rel="stylesheet" href="style.css">
+  <title>EasyCar - Reserve</title>
+  <style>
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+      overflow: auto;
+      z-index: 1;
+      width: 40vw;
+      height: auto;
+    }
+
+
+    .show {
+      display: block;
+    }
+  </style>
 </head>
 
-<body class="">
-  <div> <!-- Body wrapper -->
-    <div>
+<body class="bg-gray-100">
+  <!-- body wrapper -->
+  <div class="overflow-hidden">
+    <!-- nav div -->
+    <div class="overflow-y-hidden">
       <nav class="bg-black h-20 flex justify-between items-center px-2 md:px-4">
         <div class="block w-1/3 sm:w-1/4 md:w-1/12">
           <a href="#"><img src="images/logo.png" alt="" /></a>
@@ -47,11 +66,30 @@
             <img src="images/search.png" alt="" />
           </div>
           <div class="flex">
-            <img class="w-9 object-contain sm:block sm:mr-1 " src="images/cart.png" alt="" />
-            <p
-              class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-16 sm:block sm:right-16 md:right-3 md:block">
-            </p>
-            <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-6">
+            <div class="dropdown">
+              <p id="basket-count"
+                class="bg-amber-400 rounded-3xl w-5 h-5 text-center absolute top-6 right-[55px] sm:block sm:right-[55px] md:right-[17px] md:block">
+                0
+              </p>
+              <img onclick="toggleDropdown()"
+                class="dropbtn color-black cursor-pointer w-9  h-9 object-contain sm:block sm:mr-1  "
+                src="images/cart.png" alt="" />
+              <div>
+                <div id="cartDropdown"
+                  class="dropdown-content w-full h-[70vh] border-2 border-black pt-1 overflow-y-auto md:w-96">
+                  <div id="myDropdown">
+
+                  </div>
+                  <div class="flex justify-around py-2 bg-black">
+                    <button onclick="location.href='checkout.html'"
+                      class="font-bold rounded-[15px] p-2 w-28 flex justify-center bg-[#EFE61E]">Checkout</button>
+                    <button onclick="localStorage.clear(); document.location.reload()"
+                      class="font-bold rounded-[15px] p-2 w-28 flex justify-center bg-[#EFE61E]">Clear</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-3">
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
@@ -60,40 +98,50 @@
         </div>
       </nav>
     </div>
+    <!-- Popup -->
+    <div id="popup"
+      class="fixed w-full h-full top-0 left-0  items-center flex justify-center bg-black bg-opacity-50 hidden z-20">
+      <!-- Popup content -->
+      <div id="myPopup"
+        class="bg-white w-9/12 h-[90vh] flex flex-col justify-start items-center gap-4 overflow-y-auto md:h-fit">
 
-    <div class=" bg-[url('/images/contactimg.png')] ">
-      <section>
-        <h1 class="text-white  font-semibold pt-8 text-center text-4xl w-auto"> Contact us</h1>
-        <div class="w-11/12 m-auto">
-          <form onsubmit="return validateForm()" class="flex flex-col gap-10 md:flex md:flex-col md:gap-20">
-            <div class="flex flex-col gap-10 pt-10 md:flex md:flex-row md:justify-between md:gap-24 md:pt-28">
-              <div class="w-full ">
-                <input type="text" id="name" name="name" placeholder="Enter your name"
-                  class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 p-2 border-2 text-white border-white">
-                <div id="nameErr" class="text-red-600 font-light text-sm"></div>
-              </div>
-              <div class="w-full">
-                <input type="text" id="email" name="email" placeholder="Enter your email"
-                  class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 p-2 border-2 text-white border-white">
-                <div id="emailErr" class="text-red-600 font-light text-sm"></div>
-              </div>
-              <div class="w-full">
-                <input type="text" id="phone" name="phone" placeholder="Enter your phone"
-                  class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 b p-2 border-2 text-white border-white">
-                <div id="phoneErr" class="text-red-600 font-light text-sm"></div>
-              </div>
-            </div>
-            <div>
-              <textarea type="text" id="message" name="message" placeholder="Enter your message"
-                class="resize-none placeholder:text-white h-52 w-full p-2 bg-white bg-opacity-20 border-2 text-white border-white md:placeholder:text-xl"></textarea>
-              <div id="messageErr" class="text-red-600 font-light text-sm"></div>
-            </div>
-            <input type="submit" value="Submit"
-              class="mb-7 self-start w-1/7 bg-yellow-400 text-white py-2 px-4 rounded-md hover:bg-transparent border border-yellow-400 md: md:w-36 ">
-          </form>
-        </div>
-
+      </div>
     </div>
+    <!-- End of Popup -->
+    <div class=" bg-[url('/images/contactimg.png')] ">
+        <section>
+          <h1 class="text-white  font-semibold pt-8 text-center text-4xl w-auto"> Contact us</h1>
+          <div class="w-11/12 m-auto">
+            <form onsubmit="return validateForm()" class="flex flex-col gap-10 md:flex md:flex-col md:gap-20">
+              <div class="flex flex-col gap-10 pt-10 md:flex md:flex-row md:justify-between md:gap-24 md:pt-28">
+                <div class="w-full ">
+                  <input type="text" id="name" name="name" placeholder="Enter your name"
+                    class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 p-2 border-2 text-white border-white">
+                  <div id="nameErr" class="text-red-600 font-light text-sm"></div>
+                </div>
+                <div class="w-full">
+                  <input type="text" id="email" name="email" placeholder="Enter your email"
+                    class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 p-2 border-2 text-white border-white">
+                  <div id="emailErr" class="text-red-600 font-light text-sm"></div>
+                </div>
+                <div class="w-full">
+                  <input type="text" id="phone" name="phone" placeholder="Enter your phone"
+                    class="placeholder:text-white w-full h-14 bg-white bg-opacity-20 b p-2 border-2 text-white border-white">
+                  <div id="phoneErr" class="text-red-600 font-light text-sm"></div>
+                </div>
+              </div>
+              <div>
+                <textarea type="text" id="message" name="message" placeholder="Enter your message"
+                  class="resize-none placeholder:text-white h-52 w-full p-2 bg-white bg-opacity-20 border-2 text-white border-white md:placeholder:text-xl"></textarea>
+                <div id="messageErr" class="text-red-600 font-light text-sm"></div>
+              </div>
+              <input type="submit" value="Submit"
+                class="mb-7 self-start w-1/7 bg-yellow-400 text-white py-2 px-4 rounded-md hover:bg-transparent border border-yellow-400 md: md:w-36 ">
+            </form>
+          </div>
+  
+      </div>
+
     <section>
       <div class=" bg-black ">
         <div
@@ -105,7 +153,7 @@
             <a href="reserve.html">reserve</a>
           </div>
           <div class="text-white flex flex-col gap-5 ">
-            <a href="#">CONTACT</a>
+            <a href="contact.html">CONTACT</a>
             <p>Rue Al Medina El Mounawara, Safi</p>
             <p class="font-bold">TEL:020 7131 3535</p>
           </div>
@@ -164,6 +212,11 @@
         </div>
       </div>
     </section>
+
+    <script src="js/basket2.js"></script>
+    <script src="js/dropDown.js"></script>
+    <script src="js/popup.js"></script>
+    <script src="js/customize.js"></script>
     <script src="js/rejex.js"></script>
 </body>
 
