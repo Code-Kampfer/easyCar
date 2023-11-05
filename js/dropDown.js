@@ -36,7 +36,7 @@ function renderBasket(dropdown, basket) {
         <div class="flex  ">
           <img class="h-[88px] w-[156px] object-contain" src="${car.image}"/>
           <div class="flex flex-col justify-center">
-            <a class="py-5 no-underline block text-black">${car.name}</a>
+            <a class="pt-5 no-underline block text-black">${car.name}</a>
             <h2 id="" class=" carPrice font-bold text-xl text-black">${price} 
               <span class="text-sm text-gray-500">/day</span>
             </h2>
