@@ -134,7 +134,7 @@ function openPopup() {
       .join("\n");
   }
   
-  window.addEventListener("load", () => {
+  window.addEventListener("load", (car) => {
     renderBasket2(document.getElementById("myPopup"), basket);
   });
   
