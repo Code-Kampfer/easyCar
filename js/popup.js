@@ -1,30 +1,25 @@
 // Open the popup
 function openPopup() {
-    document.getElementById("popup").classList.remove("hidden");
-  }
-  
-  // Close the popup
-  function closePopup() {
-    document.getElementById("popup").classList.add("hidden");
-  }
-  
-  // Close the popup when clicking outside the popup content
-  window.onclick = function (event) {
-    var popup = document.getElementById('popup');
-    if (event.target == popup) {
-        popup.classList.add('hidden');
-    }
-  }
+  document.getElementById("popup").classList.remove("hidden");
+}
 
+// Close the popup
+function closePopup() {
+  document.getElementById("popup").classList.add("hidden");
+}
 
-  function renderBasket2(dropdown, basket) {
-    dropdown.innerHTML = basket
-      .map((car) => {
-        // Split the price string by space and take the first part
-        const priceParts = car.price.split(" ");
-        const price = priceParts[0];
-  
-        return `
+// Close the popup when clicking outside the popup content
+window.onclick = function (event) {
+  var popup = document.getElementById("popup");
+  if (event.target == popup) {
+    popup.classList.add("hidden");
+  }
+};
+
+function renderBasket2(popup, car) {
+  const priceParts = car.price.split(" ");
+  const price = priceParts[0];
+  popup.innerHTML = `
         <div class="bg-[#E8E8E8] w-full flex justify-end">
         <span onclick="closePopup()" class="float-right text-5xl font-bold cursor-pointer mr-2">&times;</span>
       </div>
@@ -130,11 +125,5 @@ function openPopup() {
           class="bg-yellow-400 rounded-3xl w-24 md:w-32 h-8 mr-5 my-2 hover:text-white hover:bg-black">Save</button>
       </div>
         `;
-      })
-      .join("\n");
-  }
-  
-  window.addEventListener("load", () => {
-    renderBasket2(document.getElementById("myPopup"), basket);
-  });
-  
+}
+
