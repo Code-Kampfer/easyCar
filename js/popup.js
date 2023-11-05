@@ -16,9 +16,7 @@ window.onclick = function (event) {
   }
 };
 
-function renderBasket2(popup, car) {
-  const priceParts = car.price.split(" ");
-  const price = priceParts[0];
+function renderBasket2(popup, carImg, carName, price, seats, fuel, id) {
   popup.innerHTML = `
         <div class="bg-[#E8E8E8] w-full flex justify-end">
         <span onclick="closePopup()" class="float-right text-5xl font-bold cursor-pointer mr-2">&times;</span>
@@ -26,10 +24,10 @@ function renderBasket2(popup, car) {
       <div class="flex flex-col gap-6 justify-start items-center w-full ">
         <div class="flex flex-col justify-center items-center md:flex-row">
           <div class=" md:w-[30%]">
-            <img id="carimg" class="w-full transition-opacity" src="${car.image}" alt="">
+            <img id="carimg" class="w-full transition-opacity" src="${carImg}" alt="">
           </div>
           <div class="flex flex-col items-center gap-4">
-            <h1 class="text-3xl">${car.name}</h1>
+            <h1 class="text-3xl">${carName}</h1>
             <div class="flex gap-8 bg-[#F6F6F6] p-2 rounded-lg">
               <div class="flex flex-col items-center">
                 <img class="w-[20px]" src="images/speedmeter.svg" alt="">
@@ -41,11 +39,11 @@ function renderBasket2(popup, car) {
               </div>
               <div class="flex flex-col items-center">
                 <img class="w-[20px]" src="images/seats.svg" alt="">
-                <p>4</p>
+                <p>${seats}</p>
               </div>
               <div class="flex flex-col items-center">
                 <img class="w-[20px]" src="images/fuel.svg" alt="">
-                <p>Electric</p>
+                <p>${fuel}</p>
               </div>
             </div>
             <div class="flex gap-2 items-center">
@@ -82,7 +80,7 @@ function renderBasket2(popup, car) {
           <div class="flex w-full justify-between gap-2 md:justify-start md:w-1/3">
             <label for="audio">Audio system:</label>
             <select class="w-[55%] bg-[#D9D9D9]" name="audio" id="audio">
-              <option value="">Select</option>
+              <option value="" hidden>Select</option>
               <option value="Dolby">Dolby</option>
               <option value="ATMOS">ATMOS</option>
               <option value="Bose">Bose</option>
@@ -121,9 +119,56 @@ function renderBasket2(popup, car) {
       </div>
       <div class="bg-[#E8E8E8] w-full flex justify-end items-center gap-5">
         <p class="text-base font-semibold md:text-xl">Price: ${price}</p>
-        <button onclick="closePopup()"
+        <button id="save"
           class="bg-yellow-400 rounded-3xl w-24 md:w-32 h-8 mr-5 my-2 hover:text-white hover:bg-black">Save</button>
       </div>
         `;
+  document.getElementById("save").addEventListener("click", () => {
+    const STORAGE_KEY = "basket";
+
+    const carImg = document.getElementById("carimg").src;
+    const carId = id;
+
+    let basket = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    // Find the index of the object you want to modify
+    const indexToModify = id - 1; // Change this to the index of the object you want to modify
+
+    if (indexToModify >= 0 && indexToModify < basket.length) {
+      // Modify the image property
+      const newImage = carImg; // Replace with the new image URL
+      basket[indexToModify].image = newImage;
+
+      // Store the updated object back in localStorage
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(basket));
+      document.location.reload();
+    } else {
+      console.error("Invalid index to modify.");
+    }
+  });
 }
 
+function save(car) {
+  const parts = car.split(",");
+  const carImg = parts[0];
+  const id = parts[1];
+  const name = parts[2];
+
+  console.log(carImg);
+  console.log(id);
+  console.log(name);
+  let basket = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+  // Find the index of the object you want to modify
+  const indexToModify = id - 1; // Change this to the index of the object you want to modify
+
+  if (indexToModify >= 0 && indexToModify < basket.length) {
+    // Modify the image property
+    const newImage = carImg; // Replace with the new image URL
+    basket[indexToModify].image = newImage;
+
+    // Store the updated object back in localStorage
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(basket));
+  } else {
+  }
+}

@@ -7,21 +7,10 @@ function toggleDropdown() {
 
 function renderBasket(dropdown, basket) {
   dropdown.innerHTML = basket
-    .map((car, index) => {
+    .map((car) => {
       // Split the price string by space and take the first part
       const priceParts = car.price.split(" ");
       const price = priceParts[0];
-      // Find a parent element that exists when your JavaScript code runs.
-      const parentElement = document.getElementById("cartDropdown");
-
-      // Add an event listener to the parent element.
-      parentElement.addEventListener("click", function (event) {
-        // Check if the clicked element has the ID "customizeCarButton".
-        if (event.target.id === "customizeCarButton") {
-          // Handle the event for the "CUSTOMIZE" button.
-          customizeCar(car);
-        }
-      });
 
       return `
       <div class="border-solid border border-black w-[95%] mx-auto mb-2 rounded-xl">
@@ -36,7 +25,7 @@ function renderBasket(dropdown, basket) {
         </div>
         <div class="flex flex-col items-end pr-2">    
             <div class="font-semibold text-xs bold border border-1 border-solid border-black rounded-full mb-2 w-full max-w-[100px] h-6 flex justify-center bg-yellow-400 float-right">
-              <button id="customizeCarButton" >CUSTOMIZE</button>
+              <button onclick="customizeCar('${car.image},${car.name},${price},${car.seats},${car.fuel},${car.id}')" >CUSTOMIZE</button>
             </div>
         </div>
       </div>
@@ -47,8 +36,15 @@ function renderBasket(dropdown, basket) {
 
 // Define the customizeCar function
 function customizeCar(car) {
+  const parts = car.split(",");
+  const carImg = parts[0];
+  const carName = parts[1];
+  const price = parseFloat(parts[2]);
+  const seats = parts[3];
+  const fuel = parts[4];
+  const id = parts[5];
   const popup = document.getElementById("myPopup");
-  renderBasket2(popup, car);
+  renderBasket2(popup, carImg, carName, price, seats, fuel, id);
   openPopup();
 }
 
