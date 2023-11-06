@@ -98,7 +98,8 @@
           </div>
         </div>
       </nav>
-      <div id="displaymenu" class="flex flex-col items-center justify-center burger-content w-full py-6 hidden md:hidden">
+      <div id="displaymenu"
+        class="flex flex-col items-center justify-center burger-content w-full py-6 hidden md:hidden">
         <div class="flex items-center border border-black p-1 px-2 rounded-3xl">
           <input class=" placeholder:text-black placeholder:font-bold text-white text-sm focus:outline-none w-48 h-3"
             type="text" placeholder="Search" />
@@ -160,7 +161,7 @@
     </div>
 
     <!-- Card Grid View -->
-    <div id="card-grid" class="block md:w-auto md:block">
+    <div id="card-grid" class="block md:w-auto md:block transition-opacity duration-500">
       <div class="flex justify-center items-center mt-10">
         <!-- Card Container -->
 
@@ -494,7 +495,7 @@
 
     <!-- Card List View -->
 
-    <div id="card-list" class="pb-8 hidden md:hidden">
+    <div id="card-list" class="pb-8 hidden md:hidden transition-opacity duration-500 opacity-0">
       <div class="">
         <!-- List item 1 -->
         <div
@@ -971,8 +972,12 @@
 
         gridCard.classList.remove('md:block');
         gridCard.classList.add('md:hidden');
+        gridCard.classList.add('opacity-0');
         listCard.classList.remove('md:hidden');
         listCard.classList.add('md:block');
+        setTimeout(() => {
+          listCard.classList.remove('opacity-0');
+        }, 50);
         pages.classList.add('hidden');
         document.getElementById("switchViewGrid").classList.remove('bg-[#FFC436]');
         document.getElementById("switchViewList").classList.add('bg-[#FFC436]');
@@ -986,8 +991,12 @@
 
         gridCard.classList.remove('md:hidden');
         gridCard.classList.add('md:block');
+        setTimeout(() => {
+          gridCard.classList.remove('opacity-0');
+        }, 50);
         listCard.classList.remove('md:block');
         listCard.classList.add('md:hidden');
+        listCard.classList.add('opacity-0');
         pages.classList.remove('hidden');
         document.getElementById("switchViewList").classList.remove('bg-[#FFC436]');
         document.getElementById("switchViewGrid").classList.add('bg-[#FFC436]');
