@@ -56,7 +56,7 @@ function addRowToTable(details, id) {
   carNameCell.textContent = details.name; // Display the car name
   carColorCell.textContent = details.image.substring(details.image.lastIndexOf("-") + 1, details.image.lastIndexOf("."));; // Display car color (you can replace this with the actual car color property)
   quantityCell.textContent = 1; // Quantity is always 1
-  totalPriceCell.textContent = details.price; // Display the total price per day
+  totalPriceCell.textContent = details.price + " /day"; // Display the total price per day
 
   // Add any additional classes or styles as needed
 }
