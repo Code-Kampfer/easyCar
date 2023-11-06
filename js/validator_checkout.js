@@ -180,14 +180,14 @@ function validateZip(zip) {
 }
 
 function validateEmail(email) {
-  if (state == "" || state == null) {
-    printError("emailERR", "Please enter your state");
+  if (email == "" || email == null) {
+    printError("emailERR", "Please enter your email");
     document.getElementById("emailBorder").classList.add("border-red-600");
     return false;
   } else {
     var regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
-    if (!regex.test(state)) {
-      printError("emailERR", "Please enter a valid email (example@exmpl.net");
+    if (!regex.test(email)) {
+      printError("emailERR", "Please enter a valid email (example@exmpl.net)");
       document.getElementById("emailBorder").classList.add("border-red-600");
       return false;
     } else {
@@ -204,7 +204,7 @@ function validatePhone(phone) {
     document.getElementById("phoneBorder").classList.add("border-red-600");
     return false;
   } else {
-    var regex = /^[0][5-7][0-9]{6}$/;
+    var regex = /^[0][5-7][0-9]{8}$/;
     if (!regex.test(phone)) {
       printError(
         "phoneERR",
@@ -360,6 +360,7 @@ function validateForm() {
   ) {
     return false; // Prevent form submission
   }
+  alert('Payement successful');
   return true;
 }
 
