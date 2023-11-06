@@ -89,14 +89,43 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-3">
+                        <div id="burgermenu" onclick="toggleBurgermenu()" class="md:hidden md:mx-2 cursor-pointer mr-3 ml-3">
                             <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
                             <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
                             <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
-                        </div>
+                          </div>
                     </div>
                 </div>
             </nav>
+            <div id="displaymenu" class="flex flex-col items-center justify-center burger-content w-full py-6 hidden md:hidden">
+                <div class="flex items-center border border-black p-1 px-2 rounded-3xl">
+                  <input class=" placeholder:text-black placeholder:font-bold text-white text-sm focus:outline-none w-48 h-3"
+                    type="text" placeholder="Search" />
+                  <img src="images/search_black.svg" alt="" />
+                </div>
+                <div class="flex flex-col items-center divide-y-2 gap-6 w-full divide-black">
+                  <div class="pt-6 text-2xl text-[#FFC436] font-semibold w-[90%] flex justify-center">
+                    <a href="index.html">
+                      <span>HOME</span>
+                    </a>
+                  </div>
+                  <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+                    <a href="reserve.html">
+                      <span>RESERVE</span>
+                    </a>
+                  </div>
+                  <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+                    <a href="about.html">
+                      <span>ABOUT</span>
+                    </a>
+                  </div>
+                  <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+                    <a href="contact.html">
+                      <span>CONTACT</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
         </div>
         <!-- Popup -->
         <div id="popup"

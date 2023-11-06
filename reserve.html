@@ -14,10 +14,12 @@
       position: absolute;
       right: 0;
       background-color: rgb(243 244 246 / var(--tw-bg-opacity));
-      overflow: auto;
-      z-index: 1;
-      width: 40vw;
-      height: auto;
+    }
+
+    #displaymenu {
+      position: absolute;
+      right: 0;
+      background-color: white;
     }
 
 
@@ -89,7 +91,7 @@
                 </div>
               </div>
             </div>
-            <div class="md:hidden md:mx-2 cursor-pointer mr-3 ml-3">
+            <div id="burgermenu" onclick="toggleBurgermenu()" class="md:hidden md:mx-2 cursor-pointer mr-3 ml-3">
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
               <span class="block w-6 h-1 my-1 mx-auto bg-white transition-all ease-in-out"></span>
@@ -97,6 +99,35 @@
           </div>
         </div>
       </nav>
+      <div id="displaymenu" class="flex flex-col items-center justify-center burger-content w-full py-6 hidden md:hidden">
+        <div class="flex items-center border border-black p-1 px-2 rounded-3xl">
+          <input class=" placeholder:text-black placeholder:font-bold text-white text-sm focus:outline-none w-48 h-3"
+            type="text" placeholder="Search" />
+          <img src="images/search_black.svg" alt="" />
+        </div>
+        <div class="flex flex-col items-center divide-y-2 gap-6 w-full divide-black">
+          <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+            <a href="index.html">
+              <span>HOME</span>
+            </a>
+          </div>
+          <div class="pt-6 text-2xl text-[#FFC436] font-semibold w-[90%] flex justify-center">
+            <a href="reserve.html">
+              <span>RESERVE</span>
+            </a>
+          </div>
+          <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+            <a href="about.html">
+              <span>ABOUT</span>
+            </a>
+          </div>
+          <div class="pt-6 text-2xl font-semibold w-[90%] flex justify-center">
+            <a href="contact.html">
+              <span>CONTACT</span>
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Popup -->
     <div id="popup"
@@ -480,8 +511,8 @@
                 <h3 class=" carName font-bold text-3xl ">BMW Series 5</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -521,8 +552,8 @@
                 <h3 class=" carName font-bold text-3xl ">Toyota Corolla</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">900 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">900 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -562,8 +593,8 @@
                 <h3 class=" carName font-bold text-3xl ">BMW X5</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -606,8 +637,8 @@
                 <h3 class=" carName font-bold text-3xl ">Ford Bronco</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -647,8 +678,8 @@
                 <h3 class=" carName font-bold text-3xl ">Tesla Model 3</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">900 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">900 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -689,8 +720,8 @@
                 <h3 class=" carName font-bold text-3xl ">BMW X1</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -733,8 +764,8 @@
                 <h3 class=" carName font-bold text-3xl ">Toyota Sienna</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1500 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -774,8 +805,8 @@
                 <h3 class=" carName font-bold text-3xl ">Ford Explorer</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">900 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">900 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -816,8 +847,8 @@
                 <h3 class=" carName font-semibold text-3xl ">Tesla Model X</h3>
               </div>
               <div>
-                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span
-                    class="text-sm text-gray-500 py-5">/day</span></h2>
+                <h2 class=" carPrice font-bold text-3xl py-5">1300 <span class="text-sm text-gray-500 py-5">/day</span>
+                </h2>
               </div>
               <div class="flex justify-center gap-12 bg-[#F6F6F6] p-2 rounded-lg">
                 <div class="flex flex-col items-center">
@@ -848,7 +879,7 @@
       </div>
     </div>
 
-    <ul id="pages" class="listPage list-none text-center">
+    <ul id="pages" class="listPage list-none text-center mb-7">
       <li class="active">1</li>
       <li>2</li>
       <li>3</li>
