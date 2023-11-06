@@ -5,12 +5,22 @@ function toggleDropdown() {
   document.getElementById("cartDropdown").classList.toggle("show");
 }
 
-function toggleBurgermenu(){
-  document.getElementById("burgermenu").classList.toggle("[&>*:nth-child(2)]:opacity-0");
-  document.getElementById("burgermenu").classList.toggle("[&>*:nth-child(1)]:translate-y-2");
-  document.getElementById("burgermenu").classList.toggle("[&>*:nth-child(1)]:rotate-45");
-  document.getElementById("burgermenu").classList.toggle("[&>*:nth-child(3)]:-translate-y-2");
-  document.getElementById("burgermenu").classList.toggle("[&>*:nth-child(3)]:-rotate-45");
+function toggleBurgermenu() {
+  document
+    .getElementById("burgermenu")
+    .classList.toggle("[&>*:nth-child(2)]:opacity-0");
+  document
+    .getElementById("burgermenu")
+    .classList.toggle("[&>*:nth-child(1)]:translate-y-2");
+  document
+    .getElementById("burgermenu")
+    .classList.toggle("[&>*:nth-child(1)]:rotate-45");
+  document
+    .getElementById("burgermenu")
+    .classList.toggle("[&>*:nth-child(3)]:-translate-y-2");
+  document
+    .getElementById("burgermenu")
+    .classList.toggle("[&>*:nth-child(3)]:-rotate-45");
   document.getElementById("displaymenu").classList.toggle("hidden");
 }
 
@@ -34,7 +44,7 @@ function renderBasket(dropdown, basket) {
         </div>
         <div class="flex flex-col items-end pr-2">    
             <div class="font-semibold text-xs bold border border-1 border-solid border-black rounded-full mb-2 w-full max-w-[100px] h-6 flex justify-center bg-yellow-400 float-right">
-              <button onclick="customizeCar('${car.image},${car.name},${price},${car.seats},${car.fuel},${car.id},${car.gas},${car.gps},${car.wifi}')" >CUSTOMIZE</button>
+              <button onclick="customizeCar('${car.image},${car.name},${price},${car.seats},${car.fuel},${car.id},${car.gas},${car.gps},${car.wifi},${car.sunroof},${car.audio},${car.station}')" >CUSTOMIZE</button>
             </div>
         </div>
       </div>
@@ -55,8 +65,25 @@ function customizeCar(car) {
   const gas = parts[6];
   const gps = parts[7];
   const wifi = parts[8];
+  const sunroof = parts[9];
+  const audio = parts[10];
+  const station = parts[11];
   const popup = document.getElementById("myPopup");
-  renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps, wifi);
+  renderBasket2(
+    popup,
+    carImg,
+    carName,
+    price,
+    seats,
+    fuel,
+    id,
+    gas,
+    gps,
+    wifi,
+    sunroof,
+    audio,
+    station
+  );
   openPopup();
 }
 

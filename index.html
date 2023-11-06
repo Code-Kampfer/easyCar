@@ -30,12 +30,12 @@
 
 <body class="bg-gray-100">
     <!-- body wrapper -->
-    <div class="overflow-hidden">
+    <div id="outerWrapper" class="overflow-hidden">
         <!-- nav div -->
         <div class="overflow-y-hidden">
             <nav class="bg-black h-20 flex justify-between items-center px-2 md:px-4">
                 <div class="block w-1/3 sm:w-1/4 md:w-1/12">
-                    <a href="#"><img src="images/logo.png" alt="" /></a>
+                    <a href="index.html"><img src="images/logo.png" alt="" /></a>
                 </div>
                 <ul class="font-poppins text-white text-sm list-none [&>*]:inline-block [&>*]:mr-3 hidden md:block">
                     <li>
@@ -77,8 +77,8 @@
                                 src="images/cart.png" alt="" />
                             <div>
                                 <div id="cartDropdown"
-                                    class="dropdown-content w-full h-[70vh] border-2 border-black pt-1 overflow-y-auto md:w-96">
-                                    <div id="myDropdown">
+                                    class="dropdown-content w-full h-[70vh] border-2 border-black pt-1 overflow-y-auto md:w-96 md:mr-2 mt-5">
+                                    <div id="myDropdown" class="pt-2">
 
                                     </div>
                                     <div class="flex justify-around py-2 bg-black">
@@ -141,16 +141,17 @@
             </div>
         </div>
         <!-- End of Popup -->
-        <div class="overflow-hidden h-[20vh] md:w-full bg-[url('images/home-bg.png')] md:h-[100vh]  bg-cover">
+        <div
+            class="overflow-hidden bg-[url('images/home-bg-mobile.png')] bg-center bg-cover h-[50vh] md:bg-[url('images/home-bg.png')] md:w-full md:bg-center md:h-[100vh] md:bg-cover md:flex md:items-center md:justify-start">
             <!-- <img class="w-full h-full max-h-minx  max-w-screen-2xl" src="images/home-bg.png"> -->
             <p
-                class=" w-full max-w-xs mx-auto pt-5 text-xl md:w-full text-white md:max-w-md md:text-4xl font-semibold ">
+                class="w-full pt-5 text-xl text-center text-white px-4 md:ml-10 md:w-96 md:max-w-md md:text-4xl font-semibold ">
                 Discover the world on wheels with our car rental service</p>
         </div>
         <section class="">
             <h1 class=" text-xl text-center font-bold  md:text-7xl mt-10">Our Brands</h1>
             <div class=" flex flex-col items-center gap-10 md:flex md:flex-row md:justify-around pt-12 pb-12">
-                <div class="rounded-md bg-gray-200 h-48 w-48 flex flex-col items-center justify-center">
+                <div class="rounded-lg bg-gray-300 h-48 w-48 flex flex-col items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
                         <path
                             d="M19.946 38.0681C9.96848 38.0681 1.87859 29.9782 1.87859 20.0007C1.87859 10.0232 9.96848 1.93328 19.946 1.93328C29.9235 1.93328 38.0134 10.0232 38.0134 20.0007C38.0134 29.9782 29.9235 38.0681 19.946 38.0681ZM19.946 0.980469C9.43814 0.980469 0.925781 9.49283 0.925781 20.0007C0.925781 30.5086 9.43814 39.0209 19.946 39.0209C30.4539 39.0209 38.9662 30.5086 38.9662 20.0007C38.9662 9.49283 30.4449 0.980469 19.946 0.980469ZM19.946 38.2209C22.4089 38.2209 24.791 37.7355 27.0381 36.7917C29.2044 35.8749 31.155 34.5625 32.8269 32.8906C34.4988 31.2187 35.8112 29.2681 36.728 27.1018C37.6808 24.8546 38.1572 22.4726 38.1572 20.0097C38.1572 17.5468 37.6719 15.1647 36.728 12.9175C35.8112 10.7513 34.4988 8.80069 32.8269 7.12878C31.155 5.45687 29.2044 4.14451 27.0381 3.22766C24.791 2.27485 22.4089 1.79845 19.946 1.79845C17.4831 1.79845 15.1011 2.28384 12.8539 3.22766C10.6876 4.14451 8.73702 5.45687 7.06511 7.12878C5.3932 8.80069 4.08084 10.7513 3.16398 12.9175C2.21117 15.1647 1.73477 17.5468 1.73477 20.0097C1.73477 22.4726 2.22016 24.8546 3.16398 27.1018C4.08084 29.2681 5.3932 31.2187 7.06511 32.8906C8.73702 34.5625 10.6876 35.8749 12.8539 36.7917C15.1011 37.7355 17.4831 38.2209 19.946 38.2209ZM19.946 1.13328C22.4898 1.13328 24.9617 1.62766 27.2898 2.61642C29.537 3.56923 31.5595 4.92654 33.2853 6.66137C35.0202 8.3962 36.3775 10.4097 37.3303 12.6569C38.3101 14.985 38.8134 17.4569 38.8134 20.0007C38.8134 22.5445 38.319 25.0164 37.3303 27.3445C36.3775 29.5917 35.0202 31.6052 33.2853 33.34C31.5505 35.0749 29.537 36.4322 27.2898 37.385C24.9617 38.3647 22.4898 38.8681 19.946 38.8681C17.4022 38.8681 14.9303 38.3737 12.6022 37.385C10.355 36.4322 8.33252 35.0749 6.60668 33.34C4.88084 31.6052 3.51455 29.5917 2.56174 27.3445C1.58196 25.0164 1.07859 22.5445 1.07859 20.0007C1.07859 17.4569 1.58196 14.985 2.56174 12.6569C3.51455 10.4097 4.87185 8.3962 6.60668 6.66137C8.34151 4.92654 10.355 3.56923 12.6022 2.61642C14.9213 1.62766 17.3932 1.13328 19.946 1.13328Z"
@@ -167,7 +168,7 @@
                     </svg>
                     <p>BMW</p>
                 </div>
-                <div class="rounded-md bg-gray-200 h-48 w-48 flex flex-col items-center justify-center">
+                <div class="rounded-lg bg-gray-300 h-48 w-48 flex flex-col items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40" viewBox="0 0 41 40" fill="none">
                         <g clip-path="url(#clip0_115_749)">
                             <path
@@ -185,7 +186,7 @@
                     </svg>
                     <p>Tesla</p>
                 </div>
-                <div class="rounded-md bg-gray-200 h-48 w-48 flex flex-col items-center justify-center">
+                <div class="rounded-lg bg-gray-300 h-48 w-48 flex flex-col items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="90" height="32" viewBox="0 0 90 32" fill="none">
                         <path
                             d="M63.2979 19.7126C63.3142 19.794 63.412 19.8673 63.518 19.908C63.5587 19.9243 63.575 19.9487 63.5343 20.0301C63.2408 20.6571 62.9718 21.0154 62.6131 21.5528C62.2789 22.0576 61.8957 22.4485 61.4392 22.823C60.7463 23.393 59.7844 24.02 58.9937 23.5966C58.6431 23.4174 58.4883 22.9207 58.4964 22.5218C58.5127 21.3981 59.01 20.25 59.9393 19.1182C61.0643 17.734 62.3115 17.0174 63.1267 17.4083C63.9745 17.8072 63.7055 18.7843 63.3223 19.5579C63.2897 19.6067 63.2897 19.6637 63.2979 19.7126ZM72.3628 10.9675C72.4198 10.8617 72.3628 10.7803 72.2242 10.7803C71.515 10.7803 70.5938 10.7803 69.8601 10.7803C69.6889 10.7803 69.5911 10.8047 69.5096 10.9675C69.2406 11.4887 65.9309 16.4393 65.3195 17.4001C65.2136 17.5467 65.0913 17.5223 65.075 17.3594C65.0098 16.7894 64.5207 16.1299 63.7381 15.8205C63.143 15.5843 62.5642 15.5355 61.961 15.6169C60.8768 15.7635 59.9067 16.3335 59.0507 16.9849C57.7709 17.962 56.6622 19.224 55.2275 20.1604C54.4449 20.6653 53.377 21.1131 52.6597 20.4536C52.0157 19.851 52.089 18.5238 53.0754 17.4897C53.1814 17.3838 53.3037 17.4734 53.2874 17.5711C53.1977 18.0352 53.3118 18.4994 53.6623 18.8251C54.0944 19.2159 54.7139 19.2566 55.2438 18.9961C55.8715 18.6866 56.2383 18.0922 56.3443 17.4164C56.5074 16.366 55.7003 15.4378 54.6895 15.3645C53.8661 15.3075 53.0754 15.5925 52.3091 16.2276C51.926 16.5452 51.7059 16.7813 51.3717 17.2536C51.2901 17.3676 51.1679 17.3838 51.1679 17.2128C51.2086 15.8693 50.6461 15.1121 49.5375 15.0877C48.6734 15.0632 47.7522 15.5355 47.0267 16.1055C46.236 16.7406 45.5512 17.5793 44.8094 18.3691C44.7197 18.4668 44.6382 18.4586 44.6138 18.2714C44.5893 17.3838 44.3692 16.5126 43.9535 15.9019C43.8067 15.6902 43.4969 15.5843 43.2442 15.7309C43.122 15.796 42.7062 15.9833 42.4046 16.2276C42.2579 16.3497 42.1926 16.5289 42.266 16.7569C42.6655 18.0922 42.5758 19.5986 42.0378 20.8851C41.5405 22.0576 40.5786 23.1162 39.4373 23.4663C38.6873 23.7024 37.9129 23.5884 37.4319 22.9289C36.7716 22.0169 37.0406 20.4291 38.0189 19.11C38.8911 17.9457 40.1465 17.2128 41.3938 16.7324C41.5405 16.6754 41.5731 16.5777 41.5323 16.4556C41.4671 16.252 41.353 15.967 41.3122 15.8449C41.1981 15.5355 40.872 15.4866 40.4807 15.5355C39.5677 15.6413 38.7525 15.9508 37.9374 16.3905C35.8097 17.5304 34.75 19.7289 34.2772 20.9014C34.0489 21.4632 33.8614 21.8215 33.6087 22.1309C33.2745 22.5543 32.8506 22.937 32.0843 23.6047C32.0109 23.6698 31.962 23.792 32.0191 23.9141C32.1006 24.077 32.5001 24.6388 32.6142 24.6877C32.7365 24.7528 32.8832 24.6632 32.9403 24.6225C33.4783 24.2561 34.1223 23.678 34.4402 23.2871C34.5543 23.1569 34.6603 23.2057 34.7255 23.4093C35.019 24.4597 35.7853 25.3146 36.8532 25.6729C38.8015 26.3324 40.8231 25.3798 42.3475 23.7268C43.3176 22.6765 43.6681 22.0006 44.035 21.5365C44.6627 20.7548 45.9099 19.0123 47.3854 17.8968C47.9316 17.4815 48.5674 17.1721 48.8935 17.3757C49.1544 17.5467 49.2359 17.9294 48.8201 18.6866C47.312 21.4388 45.0947 24.6714 44.6871 25.4531C44.6138 25.5915 44.679 25.6973 44.8175 25.6973C45.6083 25.6973 46.3909 25.6973 47.1082 25.6973C47.2305 25.6892 47.2794 25.6403 47.3446 25.5508C48.5022 23.7431 49.5946 22.0169 50.7603 20.2337C50.8255 20.1279 50.8826 20.2093 50.8907 20.2581C50.9152 20.6734 51.013 21.2352 51.2657 21.6098C51.7059 22.2938 52.3336 22.5869 53.0265 22.595C53.5808 22.6032 53.858 22.5136 54.4531 22.2938C54.934 22.1146 55.3253 21.8785 55.6269 21.6668C55.7981 21.5447 55.8307 21.7482 55.8307 21.7808C55.5617 23.2139 55.896 24.9238 57.3225 25.624C59.0344 26.4627 60.9094 25.2821 61.9936 24.2154C62.0995 24.1095 62.2137 24.1258 62.2218 24.3457C62.2463 24.7528 62.4256 25.2413 62.768 25.5752C63.6729 26.4871 65.507 26.1207 67.3412 24.7039C68.5232 23.792 69.7542 22.5136 70.8628 21.1538C70.9036 21.105 70.9362 21.0154 70.8547 20.934C70.6835 20.7548 70.4389 20.5513 70.2677 20.3966C70.1944 20.3314 70.0802 20.3477 70.015 20.3966C68.8738 21.4795 67.8466 22.7172 66.363 23.7431C65.8657 24.0933 65.0668 24.3701 64.7081 23.8897C64.5696 23.7024 64.5859 23.4419 64.7244 23.0999C65.1483 22.0006 72.0041 11.5782 72.3628 10.9675Z"
@@ -199,7 +200,7 @@
                     </svg>
                     <p>Ford</p>
                 </div>
-                <div class="rounded-md bg-gray-200 h-48 w-48 flex flex-col items-center justify-center">
+                <div class="rounded-lg bg-gray-300 h-48 w-48 flex flex-col items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" width="55" height="36" viewBox="0 0 55 36" fill="none">
                         <path
                             d="M39.6699 1.76931C36.2635 0.649949 32.041 0 27.4638 0C22.8865 0 18.664 0.649949 15.2576 1.76931C6.2095 4.73019 0 10.8686 0 17.9458C0 27.9117 12.2771 36 27.4283 36C42.5795 36 54.8565 27.9117 54.8565 17.9458C54.9275 10.8686 48.718 4.73019 39.6699 1.76931ZM27.4638 28.2728C25.1928 28.2728 23.3477 23.7593 23.2413 18.0542C24.5896 18.1625 26.009 18.2347 27.4638 18.2347C28.9186 18.2347 30.3024 18.1625 31.6862 18.0542C31.5798 23.7232 29.7347 28.2728 27.4638 28.2728ZM23.5252 13.5767C24.1284 9.56871 25.6541 6.75226 27.4638 6.75226C29.2379 6.75226 30.7637 9.56871 31.4024 13.5767C30.1605 13.6851 28.8121 13.7573 27.4638 13.7573C26.1154 13.7573 24.8025 13.7212 23.5252 13.5767ZM33.8152 13.2879C32.8926 7.00501 30.4088 2.52758 27.4638 2.52758C24.5187 2.52758 22.0349 7.00501 21.1123 13.2879C15.5415 12.3852 11.6384 10.3992 11.6384 8.05215C11.6384 4.87462 18.6995 2.31093 27.4283 2.31093C36.1571 2.31093 43.2182 4.87462 43.2182 8.05215C43.2891 10.3992 39.386 12.4213 33.8152 13.2879ZM4.04505 17.2959C4.04505 14.2267 5.21598 11.3741 7.20303 8.91875C7.16754 9.0993 7.16754 9.27984 7.16754 9.42427C7.16754 13.2879 12.8448 16.5376 20.7575 17.7292C20.7575 18.0181 20.7575 18.3069 20.7575 18.5958C20.7575 25.7452 22.709 31.8114 25.4057 33.9057C13.4125 33.1836 4.04505 26.0341 4.04505 17.2959ZM29.5572 33.9057C32.2539 31.8114 34.2055 25.7452 34.2055 18.5958C34.2055 18.3069 34.2055 18.0181 34.2055 17.7292C42.1182 16.5376 47.7954 13.2518 47.7954 9.42427C47.7954 9.24373 47.7954 9.06319 47.76 8.91875C49.7825 11.3741 50.9179 14.2628 50.9179 17.2959C50.9179 26.0341 41.515 33.1836 29.5572 33.9057Z"
@@ -285,7 +286,7 @@
                                 <path d="M3.83301 9.66667H12.1663" stroke="#0F0F0F" stroke-width="1.75"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <p>Electric</p>
+                            <p>Essence</p>
                         </div>
                     </div>
                     <div id="but1"
@@ -379,10 +380,10 @@
                     class="bg-white shadow-mdw-full max-wxs shadow-2xl max-w-sm hover:border border-1 border-solid border-black [&>#but1]:hover:bg-yellow-400 p-2 rounded-xl ">
 
                     <div class="border border-1 border-solid  border-black rounded-2xl max-w-sm">
-                        <img src="images/bmw-series5-black.webp" class="" alt="">
+                        <img class="h-[205.39px] object-contain" src="images/ford-explorer-black.png" class="" alt="">
                     </div>
 
-                    <h3 class="font-bold text-xl py-5">Tesla Model 3</h3>
+                    <h3 class="font-bold text-xl py-5">Ford Explorer</h3>
                     <div class="flex max-w-sm justify-between items-center bg-gray-100 rounded-lg  px-5 ">
                         <div class="flex flex-col">
 
@@ -425,7 +426,7 @@
                                     d="M18.3337 18V16.3333C18.3337 14.7801 17.2713 13.4751 15.8337 13.105M12.917 3.2423C14.1386 3.73679 15.0003 4.93443 15.0003 6.33333C15.0003 7.73224 14.1386 8.92988 12.917 9.42437M14.167 18C14.167 16.4469 14.167 15.6703 13.9133 15.0577C13.5749 14.241 12.926 13.592 12.1093 13.2537C11.4967 13 10.7201 13 9.16699 13H6.66699C5.11385 13 4.33728 13 3.72471 13.2537C2.90795 13.592 2.25904 14.241 1.92073 15.0577C1.66699 15.6703 1.66699 16.4469 1.66699 18M11.2503 6.33333C11.2503 8.17428 9.75794 9.66667 7.91699 9.66667C6.07604 9.66667 4.58366 8.17428 4.58366 6.33333C4.58366 4.49238 6.07604 3 7.91699 3C9.75794 3 11.2503 4.49238 11.2503 6.33333Z"
                                     stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <p>4 person</p>
+                            <p>6 person</p>
                         </div>
                         <div class="flex flex-col">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
@@ -446,7 +447,7 @@
                                 <path d="M3.83301 9.66667H12.1663" stroke="#0F0F0F" stroke-width="1.75"
                                     stroke-linecap="round" stroke-linejoin="round" />
                             </svg>
-                            <p>Electric</p>
+                            <p>Diesel</p>
                         </div>
                     </div>
                     <div id="but1"
@@ -457,7 +458,7 @@
                 </div>
             </div>
             <div class="flex gap-16 justify-center pt-11">
-                <div class="relative border border-gray-500 rounded-full h-28 w-28 active:bg-yellow-400">
+                <div class="relative border border-gray-500 rounded-full h-20 w-20 active:bg-yellow-400">
 
                     <svg class="absolute inset-0 m-auto" xmlns="http://www.w3.org/2000/svg" width="43" height="43"
                         viewBox="0 0 43 43" fill="none">
@@ -466,7 +467,7 @@
                     </svg>
                 </div>
 
-                <div class="relative border border-gray-500 rounded-full h-28 w-28 active:bg-yellow-400">
+                <div class="relative border border-gray-500 rounded-full h-20 w-20 active:bg-yellow-400">
 
                     <svg class="absolute m-auto inset-0" xmlns="http://www.w3.org/2000/svg" width="43" height="43"
                         viewBox="0 0 43 43" fill="none">
@@ -488,7 +489,7 @@
 
             <div class="flex flex-col gap-4 justify-center items-center mt-5  md:absolute ">
                 <div
-                    class="flex   border border-solid border-gray-300 rounded-lg justify-center items-center gap-5  ml-10 w-full max-w-lg bg-white">
+                    class="flex justify-center items-center gap-5 w-[90%] border border-solid border-gray-300 rounded-lg  md:ml-10 md:w-full max-w-lg bg-white">
                     <div class="bg-gray-100 h-20 w-16 rounded-xl px-4 ml-2 relative ">
                         <svg class="absolute m-auto inset-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none">
@@ -506,7 +507,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex   border border-solid border-gray-300 rounded-lg justify-center items-center gap-5  ml-10 w-full max-w-lg bg-white">
+                    class="flex justify-center items-center gap-5 w-[90%] border border-solid border-gray-300 rounded-lg  md:ml-10 md:w-full max-w-lg bg-white">
                     <div class="bg-gray-100 h-20 w-16 rounded-xl px-4 ml-2 relative ">
                         <svg class="absolute m-auto inset-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none">
@@ -524,7 +525,7 @@
                     </div>
                 </div>
                 <div
-                    class="flex   border border-solid border-gray-300 rounded-lg justify-center items-center gap-5  ml-10 w-full max-w-lg bg-white">
+                    class="flex justify-center items-center gap-5 w-[90%] border border-solid border-gray-300 rounded-lg  md:ml-10 md:w-full max-w-lg bg-white">
                     <div class="bg-gray-100 h-20 w-16 rounded-xl px-4 ml-2 relative ">
                         <svg class="absolute m-auto inset-0" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                             viewBox="0 0 24 24" fill="none">
@@ -549,11 +550,12 @@
         </section>
 
         <section class="clear-both table w-3/4 mx-auto">
-            <p class="  text-2xl py-5 md:py-24 md:font-normal font-serif md:text-4xl">What Our Customers Say</p>
+            <p class="text-center text-2xl py-5 md:py-24 md:font-normal font-serif md:text-4xl md:text-left">What Our
+                Customers Say</p>
             <div id="carousel" style="overflow: hidden; width: 100%; display: flex; transition: transform 0.5s;">
-                <div class="w-full max-w-5xl flex flex-col items-start overflow-aut" id="slide1"
-                    style="flex: 0 0 100%; overflow: auto;">
-                    <p class="text-xl  font-bold md:text-xl text-[#0F0F0F]">
+                <div class="w-full max-w-5xl flex flex-col items-center justify-center gap-4 overflow-auto md:items-start"
+                    id="slide1" style="flex: 0 0 100%; overflow: auto;">
+                    <p class="text-xl font-bold md:text-xl text-[#0F0F0F]">
                         “I was really impressed with the level of service I received from this car rental company. The
                         process was
                         smooth and easy, and the car I rented was in excellent condition. The staff was friendly and
@@ -570,8 +572,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full max-w-5xl flex flex-col items-start overflow-aut" id="slide2"
-                    style="flex: 0 0 100%;  overflow: auto;">
+                <div class="w-full max-w-5xl flex flex-col items-start justify-center gap-4 overflow-auto md:items-start"
+                    id="slide2" style="flex: 0 0 100%;  overflow: auto;">
                     <p class="text-xl md:font-bold md:text-xl text-[#0F0F0F]">
                         “I was really impressed with the level of service I received from this car rental company. The
                         process was
@@ -589,8 +591,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-full max-w-5xl flex flex-col items-start overflow-auto" id="slide3"
-                    style="flex: 0 0 100%;  overflow: auto;">
+                <div class="w-full max-w-5xl flex flex-col items-start justify-center gap-4 overflow-auto md:items-start"
+                    id="slide3" style="flex: 0 0 100%;  overflow: auto;">
                     <p class=" text-xl md:font-bold md:text-xl text-[#0F0F0F]">
                         “I was really impressed with the level of service I received from this car rental company. The
                         process was
@@ -612,7 +614,7 @@
 
             <div class="flex gap-4 md:gap-16 justify-center md:pt-11">
                 <div
-                    class="relative border border-gray-500 rounded-full w-16 h-16 md:h-28 md:w-28 active:bg-yellow-400">
+                    class="relative border border-gray-500 rounded-full w-16 h-16 md:h-20 md:w-20 active:bg-yellow-400">
 
                     <svg class=" absolute inset-0 m-auto " xmlns="http://www.w3.org/2000/svg" width="43" height="43"
                         viewBox="0 0 43 43" fill="none">
@@ -622,7 +624,7 @@
                 </div>
 
                 <div
-                    class="relative border border-gray-500 rounded-full w-16 h-16 md:h-28 md:w-28 active:bg-yellow-400">
+                    class="relative border border-gray-500 rounded-full w-16 h-16 md:h-20 md:w-20 active:bg-yellow-400">
 
 
                     <svg class="absolute m-auto inset-0" xmlns="http://www.w3.org/2000/svg" width="43" height="43"
@@ -682,7 +684,8 @@
                         <p class="font-bold">TEL:020 7131 3535</p>
                     </div>
                     <div class="text-white flex flex-col gap-5 items-center md:mt-5 md:gap-10">
-                        <img class="h-5" src="images/logo.png" alt="">
+                        <img class="h-5 cursor-pointer" onclick="location.href='index.html'" src="images/logo.png"
+                            alt="">
                         <div class="flex space-x-2">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
