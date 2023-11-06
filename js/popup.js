@@ -16,7 +16,7 @@ window.onclick = function (event) {
   }
 };
 
-function renderBasket2(popup, carImg, carName, price, seats, fuel, id) {
+function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps, wifi) {
   popup.innerHTML = `
         <div class="bg-[#E8E8E8] w-full flex justify-end">
         <span onclick="closePopup()" class="float-right text-5xl font-bold cursor-pointer mr-2">&times;</span>
@@ -99,18 +99,18 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id) {
         <div class="flex flex-col items-center gap-6 w-full">
           <h3 class="self-center text-xl">Add-Ons</h3>
           <div class="flex flex-col justify-evenly w-24 gap-4 md:flex-row md:justify-evenly md:w-full">
-            <div onclick="selected(this)" data-color="white" id="gas"
-              class="flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
+            <div onclick="selected(this); increasePrice(this)" data-color="white" id="gas"
+              class="addon flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
               <img src="images/gas-tank.svg" alt="">
               Gas
             </div>
-            <div onclick="selected(this)" data-color="white" id="gps"
-              class="flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
+            <div onclick="selected(this); increasePrice(this)" data-color="white" id="gps"
+              class="addon flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
               <img src="images/gps.svg" alt="">
               Gps
             </div>
-            <div onclick="selected(this)" data-color="white" id="wifi"
-              class="flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
+            <div onclick="selected(this); increasePrice(this)" data-color="white" id="wifi"
+              class="addon flex items-center gap-2 border border-black rounded-lg p-1 cursor-pointer">
               <img src="images/wifi.svg" alt="">
               Wifi
             </div>
@@ -118,26 +118,53 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id) {
         </div>
       </div>
       <div class="bg-[#E8E8E8] w-full flex justify-end items-center gap-5">
-        <p class="text-base font-semibold md:text-xl">Price: ${price}</p>
+        <p class="text-base font-semibold md:text-xl">Price: <span id="carPrice">${price}</span></p>
         <button id="save"
           class="bg-yellow-400 rounded-3xl w-24 md:w-32 h-8 mr-5 my-2 hover:text-white hover:bg-black">Save</button>
       </div>
         `;
+    if(gas==1){
+        document.getElementById("gas").style.backgroundColor = "#FFC436";
+        document.getElementById("gas").setAttribute("data-color", "yellow");
+    }
+    if(gps==1){
+        document.getElementById("gps").style.backgroundColor = "#FFC436";
+        document.getElementById("gps").setAttribute("data-color", "yellow");
+    }
+    if(wifi==1){
+        document.getElementById("wifi").style.backgroundColor = "#FFC436";
+        document.getElementById("wifi").setAttribute("data-color", "yellow");
+    }
+
   document.getElementById("save").addEventListener("click", () => {
     const STORAGE_KEY = "basket";
-
+    const carPrice = document.getElementById("carPrice").textContent.trim();
     const carImg = document.getElementById("carimg").src;
-    const carId = id;
+    const gps = document.getElementById("gas").getAttribute("data-color");
+    const gas = document.getElementById("gps").getAttribute("data-color");
+    const wifi = document.getElementById("wifi").getAttribute("data-color");
 
     let basket = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
     // Find the index of the object you want to modify
-    const indexToModify = id - 1; // Change this to the index of the object you want to modify
+    const indexToModify = id - 1; 
 
     if (indexToModify >= 0 && indexToModify < basket.length) {
       // Modify the image property
-      const newImage = carImg; // Replace with the new image URL
-      basket[indexToModify].image = newImage;
+      basket[indexToModify].image = carImg;
+      basket[indexToModify].price = carPrice;
+      
+      if(gas === "white"){
+        basket[indexToModify].gas = 0;
+      }else basket[indexToModify].gas = 1;
+
+      if(gps === "white"){
+        basket[indexToModify].gps = 0;
+      }else basket[indexToModify].gps = 1;
+
+      if(wifi === "white"){
+        basket[indexToModify].wifi = 0;
+      }else basket[indexToModify].wifi = 1;
 
       // Store the updated object back in localStorage
       localStorage.setItem(STORAGE_KEY, JSON.stringify(basket));
@@ -147,28 +174,13 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id) {
     }
   });
 }
-
-function save(car) {
-  const parts = car.split(",");
-  const carImg = parts[0];
-  const id = parts[1];
-  const name = parts[2];
-
-  console.log(carImg);
-  console.log(id);
-  console.log(name);
-  let basket = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
-
-  // Find the index of the object you want to modify
-  const indexToModify = id - 1; // Change this to the index of the object you want to modify
-
-  if (indexToModify >= 0 && indexToModify < basket.length) {
-    // Modify the image property
-    const newImage = carImg; // Replace with the new image URL
-    basket[indexToModify].image = newImage;
-
-    // Store the updated object back in localStorage
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(basket));
+function increasePrice(div) {
+  const currentColor = div.getAttribute("data-color");
+  var currentPrice = document.getElementById("carPrice").textContent;
+  currentPrice = parseInt(currentPrice, 10);
+  if (currentColor === "white") {
+    document.getElementById("carPrice").innerHTML = currentPrice - 300;
   } else {
+    document.getElementById("carPrice").innerHTML = currentPrice + 300;
   }
 }

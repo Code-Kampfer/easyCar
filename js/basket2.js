@@ -23,12 +23,18 @@ rentButtons.forEach((button) => {
     let seats = productContainer.querySelector(".carSeats").textContent.trim();
     let fuel = productContainer.querySelector(".carFuel").textContent.trim();
     let image = productContainer.querySelector(".carImg").src;
+    let gas = 0;
+    let gps = 0;
+    let wifi = 0;
     let details = {
       name,
       price,
       seats,
       fuel,
       image,
+      gas,
+      gps,
+      wifi,
     };
     incrementBasket(details);
     document.location.reload();
