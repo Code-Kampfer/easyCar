@@ -1,25 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&family=Lexend&family=Podkova&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     font-family: Poppins;
 }
 
-input::placeholder{
+input::placeholder {
     font-family: Poppins;
 }
 
-.carImg{
+.carImg {
     height: 170px;
     object-fit: contain;
 }
 
-.listPage li{
+.listPage li {
     background-color: white;
     padding: 3px 10px;
     display: inline-block;
@@ -27,14 +27,22 @@ input::placeholder{
     cursor: pointer;
 }
 
-.listPage .active{
+.listPage .active {
     background-color: #FFC436;
     color: white;
 }
-  
 
-  
- 
-  
-  
-  
+th {
+    font-weight: bold;
+}
+
+/* Style the table rows */
+td {
+    background-color: white;
+    border: 2px solid #A3A3A3;
+    /* Set border and background color */
+    padding: 8px;
+    text-align: center;
+    /* Center-align cell content */
+    font-weight: normal;
+}

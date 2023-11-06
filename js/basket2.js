@@ -40,3 +40,28 @@ rentButtons.forEach((button) => {
     document.location.reload();
   });
 });
+
+const tableBody = document.querySelector("tbody"); // Get the tbody element in your table
+
+// Function to add a row to the table with the data from the basket
+function addRowToTable(details, id) {
+  const row = tableBody.insertRow(); // Insert a new row
+  const orderIdCell = row.insertCell(0);
+  const carNameCell = row.insertCell(1);
+  const carColorCell = row.insertCell(2);
+  const quantityCell = row.insertCell(3);
+  const totalPriceCell = row.insertCell(4);
+
+  orderIdCell.textContent = id; // Display the order ID
+  carNameCell.textContent = details.name; // Display the car name
+  carColorCell.textContent = details.image.substring(details.image.lastIndexOf("-") + 1, details.image.lastIndexOf("."));; // Display car color (you can replace this with the actual car color property)
+  quantityCell.textContent = 1; // Quantity is always 1
+  totalPriceCell.textContent = details.price; // Display the total price per day
+
+  // Add any additional classes or styles as needed
+}
+
+// Loop through the items in the basket and add them to the table
+basket.forEach((item, index) => {
+  addRowToTable(item, index + 1); // Add 1 to index to display a 1-based order number
+});
