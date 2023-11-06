@@ -25,7 +25,7 @@ function renderBasket(dropdown, basket) {
         </div>
         <div class="flex flex-col items-end pr-2">    
             <div class="font-semibold text-xs bold border border-1 border-solid border-black rounded-full mb-2 w-full max-w-[100px] h-6 flex justify-center bg-yellow-400 float-right">
-              <button onclick="customizeCar('${car.image},${car.name},${price},${car.seats},${car.fuel},${car.id}')" >CUSTOMIZE</button>
+              <button onclick="customizeCar('${car.image},${car.name},${price},${car.seats},${car.fuel},${car.id},${car.gas},${car.gps},${car.wifi}')" >CUSTOMIZE</button>
             </div>
         </div>
       </div>
@@ -43,8 +43,11 @@ function customizeCar(car) {
   const seats = parts[3];
   const fuel = parts[4];
   const id = parts[5];
+  const gas = parts[6];
+  const gps = parts[7];
+  const wifi = parts[8];
   const popup = document.getElementById("myPopup");
-  renderBasket2(popup, carImg, carName, price, seats, fuel, id);
+  renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps, wifi);
   openPopup();
 }
 
