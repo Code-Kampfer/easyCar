@@ -45,7 +45,3 @@ td {
 html::-webkit-scrollbar {
     width: 0px;
 }
-
- #cartDropdown::-webkit-scrollbar {
-    width: 0px;
-}
