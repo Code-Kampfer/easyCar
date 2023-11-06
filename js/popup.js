@@ -16,7 +16,7 @@ window.onclick = function (event) {
   }
 };
 
-function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps, wifi) {
+function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps, wifi, sunroof, audio, station) {
   popup.innerHTML = `
         <div class="bg-[#E8E8E8] w-full flex justify-end">
         <span onclick="closePopup()" class="float-right text-5xl font-bold cursor-pointer mr-2">&times;</span>
@@ -80,7 +80,7 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
           <div class="flex w-full justify-between gap-2 md:justify-start md:w-1/3">
             <label for="audio">Audio system:</label>
             <select class="w-[55%] bg-[#D9D9D9]" name="audio" id="audio">
-              <option value="" hidden>Select</option>
+              <option value="">Select</option>
               <option value="Dolby">Dolby</option>
               <option value="ATMOS">ATMOS</option>
               <option value="Bose">Bose</option>
@@ -136,6 +136,30 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
         document.getElementById("wifi").setAttribute("data-color", "yellow");
     }
 
+    if(sunroof === "Panoramic"){
+      document.getElementById("sunroof").options[1].selected = true ;
+    } else if(sunroof === "Electric"){
+      document.getElementById("sunroof").options[2].selected = true ;
+    } else if(sunroof === "Manual"){
+      document.getElementById("sunroof").options[3].selected = true ;
+    } else document.getElementById("sunroof").options[0].selected = true ;
+
+    if(audio === "Dolbdy"){
+      document.getElementById("audio").options[1].selected = true ;
+    } else if(audio === "ATMOS"){
+      document.getElementById("audio").options[2].selected = true ;
+    } else if(audio === "Bose"){
+      document.getElementById("audio").options[3].selected = true ;
+    } else document.getElementById("audio").options[0].selected = true ;
+
+    if(station === "CD"){
+      document.getElementById("station").options[1].selected = true ;
+    } else if(station === "Radio"){
+      document.getElementById("station").options[2].selected = true ;
+    } else if(station === "Screen"){
+      document.getElementById("station").options[3].selected = true ;
+    } else document.getElementById("station").options[0].selected = true ;
+
   document.getElementById("save").addEventListener("click", () => {
     const STORAGE_KEY = "basket";
     const carPrice = document.getElementById("carPrice").textContent.trim();
@@ -143,6 +167,9 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
     const gps = document.getElementById("gas").getAttribute("data-color");
     const gas = document.getElementById("gps").getAttribute("data-color");
     const wifi = document.getElementById("wifi").getAttribute("data-color");
+    const sunroof = document.getElementById("sunroof").value;
+    const audio = document.getElementById("audio").value;
+    const station = document.getElementById("station").value;
 
     let basket = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
@@ -165,6 +192,30 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
       if(wifi === "white"){
         basket[indexToModify].wifi = 0;
       }else basket[indexToModify].wifi = 1;
+
+      if(sunroof === "Panoramic"){
+        basket[indexToModify].sunroof = "Panoramic";
+      } else if(sunroof === "Electric"){
+        basket[indexToModify].sunroof = "Electric";
+      } else if(sunroof === "Manual"){
+        basket[indexToModify].sunroof = "Manual";
+      } else basket[indexToModify].sunroof = "";
+
+      if(audio === "Dolbdy"){
+        basket[indexToModify].audio = "Dolbdy";
+      } else if(audio === "ATMOS"){
+        basket[indexToModify].audio = "ATMOS";
+      } else if(audio === "Bose"){
+        basket[indexToModify].audio = "Bose";
+      } else basket[indexToModify].audio = "";
+  
+      if(station === "CD"){
+        basket[indexToModify].station = "CD";
+      } else if(station === "Radio"){
+        basket[indexToModify].station = "Radio";
+      } else if(station === "Screen"){
+        basket[indexToModify].station = "Screen";
+      } else basket[indexToModify].station = "";
 
       // Store the updated object back in localStorage
       localStorage.setItem(STORAGE_KEY, JSON.stringify(basket));

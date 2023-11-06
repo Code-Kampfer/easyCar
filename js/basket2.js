@@ -26,6 +26,9 @@ rentButtons.forEach((button) => {
     let gas = 0;
     let gps = 0;
     let wifi = 0;
+    let sunroof = "";
+    let audio = "";
+    let station = "";
     let details = {
       name,
       price,
@@ -35,6 +38,9 @@ rentButtons.forEach((button) => {
       gas,
       gps,
       wifi,
+      sunroof,
+      audio,
+      station,
     };
     incrementBasket(details);
     document.location.reload();
