@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
   const containers = document.querySelectorAll('.container');
+  const faq = document.getElementById('faq');
   containers.forEach(container => {
       const icon = container.querySelector('.icon');
       const response = container.nextElementSibling;
+      
       const svg = icon.querySelector('svg');
       const originalIcon = svg.innerHTML ; 
 
