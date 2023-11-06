@@ -144,7 +144,7 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
       document.getElementById("sunroof").options[3].selected = true ;
     } else document.getElementById("sunroof").options[0].selected = true ;
 
-    if(audio === "Dolbdy"){
+    if(audio === "Dolby"){
       document.getElementById("audio").options[1].selected = true ;
     } else if(audio === "ATMOS"){
       document.getElementById("audio").options[2].selected = true ;
@@ -164,8 +164,8 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
     const STORAGE_KEY = "basket";
     const carPrice = document.getElementById("carPrice").textContent.trim();
     const carImg = document.getElementById("carimg").src;
-    const gps = document.getElementById("gas").getAttribute("data-color");
-    const gas = document.getElementById("gps").getAttribute("data-color");
+    const gas = document.getElementById("gas").getAttribute("data-color");
+    const gps = document.getElementById("gps").getAttribute("data-color");
     const wifi = document.getElementById("wifi").getAttribute("data-color");
     const sunroof = document.getElementById("sunroof").value;
     const audio = document.getElementById("audio").value;
@@ -201,8 +201,8 @@ function renderBasket2(popup, carImg, carName, price, seats, fuel, id, gas, gps,
         basket[indexToModify].sunroof = "Manual";
       } else basket[indexToModify].sunroof = "";
 
-      if(audio === "Dolbdy"){
-        basket[indexToModify].audio = "Dolbdy";
+      if(audio === "Dolby"){
+        basket[indexToModify].audio = "Dolby";
       } else if(audio === "ATMOS"){
         basket[indexToModify].audio = "ATMOS";
       } else if(audio === "Bose"){
