@@ -45,6 +45,7 @@ const tableBody = document.querySelector("tbody"); // Get the tbody element in y
 
 // Function to add a row to the table with the data from the basket
 function addRowToTable(details, id) {
+  const priceParts = details.price.split(" ");
   const row = tableBody.insertRow(); // Insert a new row
   const orderIdCell = row.insertCell(0);
   const carNameCell = row.insertCell(1);
@@ -56,7 +57,7 @@ function addRowToTable(details, id) {
   carNameCell.textContent = details.name; // Display the car name
   carColorCell.textContent = details.image.substring(details.image.lastIndexOf("-") + 1, details.image.lastIndexOf("."));; // Display car color (you can replace this with the actual car color property)
   quantityCell.textContent = 1; // Quantity is always 1
-  totalPriceCell.textContent = details.price + " /day"; // Display the total price per day
+  totalPriceCell.textContent = priceParts[0] + " /day"; // Display the total price per day
 
   // Add any additional classes or styles as needed
 }
