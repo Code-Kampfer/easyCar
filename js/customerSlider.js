@@ -1,51 +1,32 @@
-const carouselContainer = document.getElementById("carousel-container");
-const slides = document.querySelectorAll('[id^="slide"]');
-let currentIndex = 0;
-let timeout = null;
+let currentSlide = 1;
+const totalSlides = 3; // Change this to the total number of slides
 
-// 
-
-function showSlide(index) {
-  // Update the current slide index
-  currentIndex = index;
-
-  // Create a new animation object
-  const animation = carouselContainer.animate([
-    { transform: `translateX(-${currentIndex * 100}%)` },
-    { transform: `translateX(-${currentIndex * 100}%` }
-  ], {
-    duration: 500,
-    easing: 'ease-in-out'
-  });
-
-  // Start the animation
-  animation.play();
+function showSlide(slideNumber) {
+  // Hide all slides
+  for (let i = 1; i <= totalSlides; i++) {
+    document.getElementById(`slide${i}`).style.display = "none";
+  }
+  document.getElementById(`slide${slideNumber}`).style.display = "block";
 }
 
-
-// Initialize the carousel
-showSlide(currentIndex);
-
-// Handle clicks on the next and previous buttons
-const nextButton = document.querySelector('.next');
-const prevButton = document.querySelector('.prev');
-
-nextButton.addEventListener('click', () => {
-  // Clear the timeout if it is set
-  if (timeout) {
-    clearTimeout(timeout);
+function nextSlide() {
+  currentSlide++;
+  if (currentSlide > totalSlides) {
+    currentSlide = 1;
   }
+  showSlide(currentSlide);
+}
 
-  // Show the next slide
-  showSlide(currentIndex + 1);
-});
-
-prevButton.addEventListener('click', () => {
-  // Clear the timeout if it is set
-  if (timeout) {
-    clearTimeout(timeout);
+function previousSlide() {
+  currentSlide--;
+  if (currentSlide < 1) {
+    currentSlide = totalSlides;
   }
+  showSlide(currentSlide);
+}
 
-  // Show the previous slide
-  showSlide(currentIndex - 1);
-});
+showSlide(currentSlide);
+
+// Event listeners for the "next" and "previous" buttons
+document.getElementById("next").addEventListener("click", nextSlide);
+document.getElementById("prev").addEventListener("click", previousSlide);
