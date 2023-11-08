@@ -1,28 +1,51 @@
-const carousel = document.getElementById("carousel");
-const slides = [
-  document.getElementById("slide1"),
-  document.getElementById("slide2"),
-  document.getElementById("slide3"),
-];
-
+const carouselContainer = document.getElementById("carousel-container");
+const slides = document.querySelectorAll('[id^="slide"]');
 let currentIndex = 0;
+let timeout = null;
+
+// 
 
 function showSlide(index) {
-  if (index < 0) {
-    index = slides.length - 1;
-  } else if (index >= slides.length) {
-    index = 0;
-  }
-
-  const offset = -index * 100;
-  carousel.style.transform = `translateX(${offset}%)`;
+  // Update the current slide index
   currentIndex = index;
+
+  // Create a new animation object
+  const animation = carouselContainer.animate([
+    { transform: `translateX(-${currentIndex * 100}%)` },
+    { transform: `translateX(-${currentIndex * 100}%` }
+  ], {
+    duration: 500,
+    easing: 'ease-in-out'
+  });
+
+  // Start the animation
+  animation.play();
 }
+
 
 // Initialize the carousel
 showSlide(currentIndex);
 
-// Auto-advance the carousel (you can customize the interval)
-setInterval(() => {
+// Handle clicks on the next and previous buttons
+const nextButton = document.querySelector('.next');
+const prevButton = document.querySelector('.prev');
+
+nextButton.addEventListener('click', () => {
+  // Clear the timeout if it is set
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+
+  // Show the next slide
   showSlide(currentIndex + 1);
-}, 1000);
+});
+
+prevButton.addEventListener('click', () => {
+  // Clear the timeout if it is set
+  if (timeout) {
+    clearTimeout(timeout);
+  }
+
+  // Show the previous slide
+  showSlide(currentIndex - 1);
+});
