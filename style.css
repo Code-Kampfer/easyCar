@@ -14,12 +14,6 @@ input::placeholder {
     font-family: Poppins;
 }
 
-.carImg {
-    width: 302px;
-    height: 170px;
-    object-fit: contain;
-}
-
 .listPage li {
     background-color: white;
     padding: 3px 10px;
@@ -49,9 +43,5 @@ td {
 }
 
 html::-webkit-scrollbar {
-    width: 0px;
-}
-
- #cartDropdown::-webkit-scrollbar {
     width: 0px;
 }
