@@ -4,12 +4,12 @@ function printError(Id, Msg) {
   //name//
   function validateName(name) {
     if (name == "" || name == null) {
-      printError("nameErr", "Veuillez entrer votre nom.");
+      printError("nameErr", "entrer your name.");
       return false;
     } else {
       var regex = /^[a-zA-Z]+$/;
       if (!regex.test(name)) {
-        printError("nameErr", "Veuillez entrer un nom valide.");
+        printError("nameErr", " entrer a valide name.");
         return false;
       } else {
         printError("nameErr", "");
@@ -20,12 +20,12 @@ function printError(Id, Msg) {
 // email//
   function validateEmail(email) {
     if (email== "" || email == null) {
-      printError("emailErr", "Veuillez entrer votre email.");
+      printError("emailErr", "entrer your email.");
       return false;
     } else {
       var regex = /^[a-zA-Z0-9]+@[a-z]+\.[a-zA-Z]{2,3}$/;
       if (!regex.test(email)) {
-        printError("emailErr", "Veuillez entrer un email valide (example@gmail.com)");
+        printError("emailErr", " entrer a  valide email  (example@gmail.com)");
         return false;
       } else {
         printError("emailErr", "");
@@ -36,12 +36,12 @@ function printError(Id, Msg) {
   // phone
   function validatePhone(phone) {
     if (phone== "" || phone == null) {
-      printError("phoneErr", "Veuillez entrer votre numéro.");
+      printError("phoneErr", "enter your phone number.");
       return false;
     } else {
       var regex =/^0[5-7][0-9]{8}$/;
       if (!regex.test(phone)) {
-        printError("phoneErr", "Veuillez entrer un numéro valide (06-XX-XX-XX-XX");
+        printError("phoneErr", " enter valid phone number (06-XX-XX-XX-XX");
         return false;
       } else {
         printError("phoneErr", "");
@@ -52,7 +52,7 @@ function printError(Id, Msg) {
     // message
     function validateMessage(message) {
         if (message== "" || message == null) {
-          printError("messageErr", "Veuillez entrer votre message.");
+          printError("messageErr", " entrer a message.");
           return false;
         } else {
             printError("messageErr", "");
