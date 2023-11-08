@@ -1,8 +1,6 @@
-  // Variables to keep track of the current slide
   let currentSlide = 1;
   const totalSlides = 3; // Change this to the total number of slides
 
-  // Function to show the current slide
   function showSlide(slideNumber) {
     // Hide all slides
     for (let i = 1; i <= totalSlides; i++) {
@@ -12,7 +10,6 @@
     document.getElementById(`slide${slideNumber}`).style.display = 'block';
   }
 
-  // Function to handle the "next" button click
   function nextSlide() {
     currentSlide++;
     if (currentSlide > totalSlides) {
@@ -21,7 +18,6 @@
     showSlide(currentSlide);
   }
 
-  // Function to handle the "previous" button click
   function previousSlide() {
     currentSlide--;
     if (currentSlide < 1) {
