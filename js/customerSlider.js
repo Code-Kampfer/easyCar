@@ -25,7 +25,6 @@ function previousSlide() {
   showSlide(currentSlide);
 }
 
-// Initial display of the first slide
 showSlide(currentSlide);
 
 // Event listeners for the "next" and "previous" buttons
